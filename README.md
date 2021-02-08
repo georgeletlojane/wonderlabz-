@@ -2,7 +2,7 @@
 Simple load balanced web engine for Wonderlabs. This is merely to demonstrate a static load balanced website that is easily scalable. The application is run on a single AWS EC2 micro node with Docker as follows:
 
 - HaProxy as a load balancer
-- 2 x nginx web servers
+- 2 x apache web servers
 
 Application can be accessed on http://wonderlabs.letlojanedigital.co.za
 Load Balancer stats can be read on http://wonderlabs.letlojanedigital.co.za:1991/ha-stats
