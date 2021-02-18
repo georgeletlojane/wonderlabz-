@@ -1,22 +1,22 @@
 version: "3.3"
 services:
   webserverservice:
-  images: letlojanesg/letlojanedigital:wonderlabs-apache
-  deploy:
-    replicas: 2
-    mode: replicated
-    endpoint_mode: dnsrr
-   network:
-     - overlay
+    image: letlojanesg/wonderlabs:wonderlabs-apache
+    deploy:
+      replicas: 2
+      mode: replicated
+      endpoint_mode: dnsrr
+    networks:
+      - overlay
      
-   loadbalancerservice:
-     images: letlojanesg/letlojanedigital:wonderlabs-haproxy
-     ports:
-       - "80:80"
-       - "1991:1991"
-     depends_on
-       - webserverservice
-     networks:
+  loadbalancerservice:
+    image: letlojanesg/wonderlabs:wonderlabs-haproxy
+    ports:
+      - "80:80"
+      - "1991:1991"
+    depends_on:
+      - webserverservice
+    networks:
       - overlay
 networks:
   overlay:
