@@ -18,3 +18,5 @@ services:
        - webserverservice
      networks:
       - overlay
+networks:
+  overlay:
